@@ -1,18 +1,6 @@
-# Cron Admin
+# Wrok Admin
 
-一个零依赖的基于Golang + React.js 的定时任务管理平台
-
-基本逻辑执行任务：通过api同步调用，同步返回
-
-Cron Admin 仅负责定时任务的调度，不负责定时任务的执行
-
-可以配置任何编程语言实现定任务的执行，例如：
-
-- Python: Flask、Django、FastAPI
-- Golang: Gin
-- Node.js: Koa、Express
-- Java: Spring Boot
-- ...
+一个零依赖的基于Golang + React.js 的资产管理平台
 
 ## 项目截图
 
