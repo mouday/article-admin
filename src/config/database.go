@@ -29,7 +29,7 @@ func GetDB() *gorm.DB {
 		level = logger.Info
 	}
 
-	newLogger := logger.New(
+	dbLogger := logger.New(
 		log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
 		logger.Config{
 			SlowThreshold:             time.Second, // Slow SQL threshold
@@ -43,7 +43,7 @@ func GetDB() *gorm.DB {
 	db, _ := gorm.Open(sqlite.Open("database.db"), &gorm.Config{
 		// 日志级别
 		// Logger: logger.Default.LogMode(logger.Error),
-		Logger: newLogger,
+		Logger: dbLogger,
 	})
 
 	return db
@@ -52,12 +52,13 @@ func GetDB() *gorm.DB {
 // 迁移数据库
 func Migrate() {
 	db := GetDB()
+
 	db.AutoMigrate(
-		&model.TaskModel{},
-		&model.TaskLogModel{},
+		&model.AssetModel{},
+		&model.CategoryModel{},
+		&model.CommentModel{},
 		&model.UserModel{},
 		&model.ConfigModel{},
-		&model.RunnerModel{},
 	)
 }
 
