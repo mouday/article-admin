@@ -1,4 +1,4 @@
-# Wrok Admin
+# Article Admin
 
 一个零依赖的基于Golang + React.js 的资产管理平台
 
@@ -14,19 +14,19 @@
 
 1、下载适合所在运行平台的二进制文件
 
-[https://github.com/mouday/cron-admin/releases](https://github.com/mouday/cron-admin/releases)
+[https://github.com/mouday/article-admin/releases](https://github.com/mouday/article-admin/releases)
 
 2、解压文件并启动服务
 
 ```bash
 # macos: 
-./cron-admin
+./article-admin
 
 # linux: 
-./cron-admin
+./article-admin
 
 # windows: 
-cron-admin.exe
+article-admin.exe
 ```
 
 启动后控制台会输出如下内容
@@ -37,7 +37,7 @@ password: 8),fua+jMN
 ********************************************
 * Welcome Use Cron Admin  v1.0.0
 * server run at:  http://127.0.0.1:8000
-* issue: https://github.com/mouday/cron-admin
+* issue: https://github.com/mouday/article-admin
 ********************************************
 ```
 

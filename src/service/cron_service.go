@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/mouday/cron-admin/src/config"
-	"github.com/mouday/cron-admin/src/model"
+	"github.com/mouday/article-admin/src/config"
+	"github.com/mouday/article-admin/src/model"
 	"github.com/robfig/cron"
 )
 

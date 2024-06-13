@@ -9,8 +9,8 @@ import (
 
 	"github.com/glebarez/sqlite" // 纯 Go 实现的 SQLite 驱动, 详情参考： https://github.com/glebarez/sqlite
 
-	"github.com/mouday/cron-admin/src/model"
-	"github.com/mouday/cron-admin/src/utils"
+	"github.com/mouday/article-admin/src/model"
+	"github.com/mouday/article-admin/src/utils"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )

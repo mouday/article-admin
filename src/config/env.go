@@ -3,7 +3,7 @@ package config
 import (
 	"os"
 
-	"github.com/mouday/cron-admin/src/utils"
+	"github.com/mouday/article-admin/src/utils"
 	"github.com/subosito/gotenv"
 )
 

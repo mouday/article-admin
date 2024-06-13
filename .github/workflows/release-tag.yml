@@ -26,7 +26,7 @@ jobs:
       - name: Checkout Web Dist
         uses: actions/checkout@v3
         with:
-          repository: 'mouday/cron-admin-web'
+          repository: 'mouday/article-admin-web'
           ref: 'dist'
           token: ${{ secrets.GH_PAT }}
           path: 'src/public'

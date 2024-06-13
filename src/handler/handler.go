@@ -8,9 +8,9 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mouday/cron-admin/src/config"
-	"github.com/mouday/cron-admin/src/utils"
-	"github.com/mouday/cron-admin/src/vo"
+	"github.com/mouday/article-admin/src/config"
+	"github.com/mouday/article-admin/src/utils"
+	"github.com/mouday/article-admin/src/vo"
 )
 
 // gin拦截response的数据

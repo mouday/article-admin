@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/mouday/cron-admin/src/api"
+	"github.com/mouday/article-admin/src/api"
 )
 
 /* 注册路由 */

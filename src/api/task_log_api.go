@@ -4,11 +4,11 @@ import (
 	"fmt"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mouday/cron-admin/src/config"
-	"github.com/mouday/cron-admin/src/form"
-	"github.com/mouday/cron-admin/src/model"
-	"github.com/mouday/cron-admin/src/service"
-	"github.com/mouday/cron-admin/src/vo"
+	"github.com/mouday/article-admin/src/config"
+	"github.com/mouday/article-admin/src/form"
+	"github.com/mouday/article-admin/src/model"
+	"github.com/mouday/article-admin/src/service"
+	"github.com/mouday/article-admin/src/vo"
 )
 
 func GetTaskLogList(ctx *gin.Context) {

@@ -7,10 +7,10 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mouday/cron-admin/src/config"
-	"github.com/mouday/cron-admin/src/handler"
-	"github.com/mouday/cron-admin/src/router"
-	"github.com/mouday/cron-admin/src/service"
+	"github.com/mouday/article-admin/src/config"
+	"github.com/mouday/article-admin/src/handler"
+	"github.com/mouday/article-admin/src/router"
+	"github.com/mouday/article-admin/src/service"
 )
 
 //go:embed public/*
@@ -59,7 +59,7 @@ func main() {
 	fmt.Println("********************************************")
 	fmt.Println("* Welcome Use Cron Admin ", VERSION)
 	fmt.Println("* server run at: ", "http://"+appRunAddress)
-	fmt.Println("* issue: https://github.com/mouday/cron-admin")
+	fmt.Println("* issue: https://github.com/mouday/article-admin")
 	fmt.Println("********************************************")
 
 	// 监听并在 http://127.0.0.1:8082 上启动服务

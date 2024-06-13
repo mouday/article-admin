@@ -1,6 +1,6 @@
 package model
 
-import "github.com/mouday/cron-admin/src/utils"
+import "github.com/mouday/article-admin/src/utils"
 
 type ContactModel struct {
 	Id          uint            `json:"historyId"`
