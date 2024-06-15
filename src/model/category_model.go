@@ -4,7 +4,6 @@ import "github.com/mouday/article-admin/src/utils"
 
 type CategoryModel struct {
 	Id         uint            `json:"categoryId"`
-	UserId     string          `json:"userId"`
 	Title      string          `json:"title"`
 	Status     bool            `json:"status"`
 	CreateTime utils.LocalTime `gorm:"type:datetime;autoCreateTime" json:"createTime"`

@@ -10,7 +10,6 @@ import (
 	"github.com/mouday/article-admin/src/config"
 	"github.com/mouday/article-admin/src/handler"
 	"github.com/mouday/article-admin/src/router"
-	"github.com/mouday/article-admin/src/service"
 )
 
 //go:embed public/*
@@ -32,7 +31,7 @@ func main() {
 	// 全局异常捕获
 	app.Use(handler.Recover)
 
-	app.Use(handler.AuthMiddleware())
+	// app.Use(handler.AuthMiddleware())
 
 	// 注册路由
 	router.RegistRouter(app)
@@ -44,10 +43,10 @@ func main() {
 	config.InitData()
 
 	// 初始化定时任务
-	service.InitCron()
+	// service.InitCron()
 
 	// 启动消费者
-	go service.Consumer()
+	// go service.Consumer()
 
 	// 【Go语言】gin + go:embed 打包静态资源文件
 	// ref: https://blog.csdn.net/Regulations/article/details/128858670

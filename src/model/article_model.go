@@ -3,7 +3,7 @@ package model
 import "github.com/mouday/article-admin/src/utils"
 
 type ArticleModel struct {
-	Id         uint            `json:"assetId"`
+	Id         uint            `json:"articleId"`
 	Title      string          `json:"title"`
 	Url        string          `json:"url"`
 	Tags       string          `json:"tags"`

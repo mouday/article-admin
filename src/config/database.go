@@ -54,11 +54,11 @@ func Migrate() {
 	db := GetDB()
 
 	db.AutoMigrate(
-		&model.AssetModel{},
+		&model.ArticleModel{},
 		&model.CategoryModel{},
-		&model.CommentModel{},
-		&model.UserModel{},
-		&model.ConfigModel{},
+		// &model.CommentModel{},
+		// &model.UserModel{},
+		// &model.ConfigModel{},
 	)
 }
 
