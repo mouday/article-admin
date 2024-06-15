@@ -18,4 +18,12 @@ func RegistRouter(app *gin.Engine) {
 	app.POST("/api/getArticlePage", api.GetArticlePage)
 	app.POST("/api/updateArticleStatus", api.UpdateArticleStatus)
 
+	// category
+	app.POST("/api/addCategory", api.AddCategory)
+	app.POST("/api/updateCategory", api.UpdateCategory)
+	app.POST("/api/deleteCategory", api.DeleteCategory)
+	app.POST("/api/getCategory", api.GetCategory)
+	app.POST("/api/getCategoryList", api.GetCategoryList)
+	app.POST("/api/updateCategoryStatus", api.UpdateCategoryStatus)
+
 }

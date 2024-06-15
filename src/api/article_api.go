@@ -91,6 +91,30 @@ func GetArticlePage(ctx *gin.Context) {
 
 	if count > 0 {
 		query.Order("id desc").Limit(params.GetSize()).Offset(params.PageOffset()).Find(&ArticleList)
+
+		// 查询文章的分类
+		categories := []model.CategoryModel{}
+		var categoryIds []uint
+
+		for _, row := range ArticleList {
+			if row.CategoryId != 0 {
+				categoryIds = append(categoryIds, row.CategoryId)
+			}
+		}
+
+		if len(categoryIds) > 0 {
+			db.Model(&model.CategoryModel{}).Where("id in ?", categoryIds).Find(&categories)
+
+			categoryMap := make(map[uint]model.CategoryModel)
+			for _, category := range categories {
+				categoryMap[category.Id] = category
+			}
+
+			for index, _ := range ArticleList {
+				ArticleList[index].Category = categoryMap[ArticleList[index].CategoryId]
+			}
+		}
+
 	}
 
 	vo.Success(ctx, vo.PageVO{
