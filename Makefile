@@ -12,7 +12,8 @@ build-linux:
 .PHONY: build-darwin
 build-darwin:
 	mkdir -p ./build/darwin
-	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o ./build/darwin/article-admin ./src/main.go
+	# CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o ./build/darwin/article-admin ./src/main.go
+	go build -o ./build/darwin/article-admin ./src/main.go
 
 # 编译到 windows
 .PHONY: build-windows
