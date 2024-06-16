@@ -13,6 +13,7 @@ func AddCategory(ctx *gin.Context) {
 	ctx.BindJSON(&row)
 
 	db := config.GetDB()
+
 	db.Model(&model.CategoryModel{}).Create(&row)
 
 	vo.Success(ctx, row)
@@ -35,6 +36,18 @@ func UpdateCategoryStatus(ctx *gin.Context) {
 	db := config.GetDB()
 
 	db.Model(&model.CategoryModel{}).Where("id = ?", params.Id).Update("status", params.Status)
+
+	vo.Success(ctx, nil)
+
+}
+
+func UpdateCategoryOrderValue(ctx *gin.Context) {
+	params := &model.CategoryModel{}
+	ctx.BindJSON(&params)
+
+	db := config.GetDB()
+
+	db.Model(&model.CategoryModel{}).Where("id = ?", params.Id).Update("order_value", params.OrderValue)
 
 	vo.Success(ctx, nil)
 
@@ -79,7 +92,7 @@ func GetCategoryList(ctx *gin.Context) {
 	query.Count(&count)
 
 	if count > 0 {
-		query.Order("id desc").Find(&CategoryList)
+		query.Order("order_value desc, id desc").Find(&CategoryList)
 	}
 
 	vo.Success(ctx, vo.PageVO{

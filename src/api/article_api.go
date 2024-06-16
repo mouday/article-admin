@@ -19,6 +19,12 @@ func AddArticle(ctx *gin.Context) {
 		row.Title = data.Title
 	}
 
+	if len(row.Tags) == 0 {
+		row.Tags = service.ParseTags(row.Title)
+	}
+
+	service.AddTags(row.Tags)
+
 	db := config.GetDB()
 	db.Model(&model.ArticleModel{}).Create(&row)
 
@@ -33,6 +39,8 @@ func UpdateArticle(ctx *gin.Context) {
 		data := utils.GetArticleData(row.Url)
 		row.Title = data.Title
 	}
+
+	service.AddTags(row.Tags)
 
 	db := config.GetDB()
 	db.Model(&model.ArticleModel{}).Where("id = ?", row.Id).Updates(&row)

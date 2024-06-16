@@ -56,6 +56,7 @@ func Migrate() {
 	db.AutoMigrate(
 		&model.ArticleModel{},
 		&model.CategoryModel{},
+		&model.TagModel{},
 		// &model.CommentModel{},
 		// &model.UserModel{},
 		// &model.ConfigModel{},

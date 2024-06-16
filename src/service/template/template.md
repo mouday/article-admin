@@ -1,7 +1,7 @@
 
-{% for key, value in data %}
-## {{ value.Category.Title | default:"未分类"  }}
-{% for child in value.Children %}
+{% for row in rows %}
+## {{ row.Category.Title | default:"未分类"  }}
+{% for child in row.Children %}
 {{forloop.Counter}}. [{{child.Title}}]({{child.Url}})
 {% endfor %}
 {% endfor %}
