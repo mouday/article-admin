@@ -7,10 +7,15 @@ const DEFAULT_PAGE_SIZE = 10
 const DEFAULT_PAGE_NUMBER = 1
 
 type PageDTO struct {
-	PageNumber int `json:"pageNumber"`
-	PageSize   int `json:"pageSize"`
-	Status     int `json:"status"`
-	UserId     int `json:"userId"`
+	PageNumber int    `json:"pageNumber"`
+	PageSize   int    `json:"pageSize"`
+	Page       bool   `json:"-"`
+	Status     int    `json:"status"`
+	UserId     int    `json:"userId"`
+	CategoryId int    `json:"categoryId"`
+	Keyword    string `json:"keyword"`
+	StartDate  string `json:"startDate"`
+	EndDate    string `json:"endDate"`
 }
 
 func (pageDTO PageDTO) PageOffset() int {

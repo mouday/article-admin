@@ -5,6 +5,7 @@ import (
 	"github.com/mouday/article-admin/src/config"
 	"github.com/mouday/article-admin/src/dto"
 	"github.com/mouday/article-admin/src/model"
+	"github.com/mouday/article-admin/src/service"
 	"github.com/mouday/article-admin/src/utils"
 	"github.com/mouday/article-admin/src/vo"
 )
@@ -79,46 +80,22 @@ func GetArticlePage(ctx *gin.Context) {
 	params := &dto.PageDTO{}
 
 	ctx.BindJSON(&params)
+	params.Page = true
 
-	db := config.GetDB()
+	pageVO := service.GetArticlePage(params)
 
-	ArticleList := []model.ArticleModel{}
-	var count int64
+	vo.Success(ctx, pageVO)
+}
 
-	query := db.Model(&model.ArticleModel{})
+func RenderArticle(ctx *gin.Context) {
 
-	query.Count(&count)
+	params := &dto.PageDTO{}
 
-	if count > 0 {
-		query.Order("id desc").Limit(params.GetSize()).Offset(params.PageOffset()).Find(&ArticleList)
+	ctx.BindJSON(&params)
 
-		// 查询文章的分类
-		categories := []model.CategoryModel{}
-		var categoryIds []uint
+	pageVO := service.GetArticlePage(params)
 
-		for _, row := range ArticleList {
-			if row.CategoryId != 0 {
-				categoryIds = append(categoryIds, row.CategoryId)
-			}
-		}
+	content := service.Render(pageVO)
 
-		if len(categoryIds) > 0 {
-			db.Model(&model.CategoryModel{}).Where("id in ?", categoryIds).Find(&categories)
-
-			categoryMap := make(map[uint]model.CategoryModel)
-			for _, category := range categories {
-				categoryMap[category.Id] = category
-			}
-
-			for index, _ := range ArticleList {
-				ArticleList[index].Category = categoryMap[ArticleList[index].CategoryId]
-			}
-		}
-
-	}
-
-	vo.Success(ctx, vo.PageVO{
-		List:  ArticleList,
-		Total: count,
-	})
+	vo.Success(ctx, content)
 }

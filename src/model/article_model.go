@@ -20,3 +20,11 @@ type ArticleModel struct {
 func (ArticleModel) TableName() string {
 	return "tb_article"
 }
+
+func (categoryAble *ArticleModel) GetCategoryId() uint {
+	return categoryAble.CategoryId
+}
+
+func (categoryAble *ArticleModel) SetCategory(category CategoryModel) {
+	categoryAble.Category = category
+}
