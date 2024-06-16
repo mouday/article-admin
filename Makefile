@@ -39,6 +39,7 @@ release-linux:
 	tar -zcvf release/article-admin-$(version)-linux-amd64.tar.gz -C ./release/linux/ .
 
 # 发布darwin
+# make release-darwin
 .PHONY: release-darwin
 release-darwin:
 	mkdir -p ./release/darwin
