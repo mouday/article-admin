@@ -58,8 +58,8 @@ func Migrate() {
 		&model.CategoryModel{},
 		&model.TagModel{},
 		// &model.CommentModel{},
-		// &model.UserModel{},
-		// &model.ConfigModel{},
+		&model.UserModel{},
+		&model.ConfigModel{},
 	)
 }
 
