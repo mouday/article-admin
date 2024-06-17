@@ -73,3 +73,10 @@ APP_ADMIN_PASSWORD=
 ## Todo
 
 - [] access token
+
+## 开发
+
+```bash
+# 打包发布
+make build-darwin && make release-darwin
+```
