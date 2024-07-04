@@ -20,7 +20,7 @@ func AddArticle(ctx *gin.Context) {
 	}
 
 	if len(row.Tags) == 0 {
-		row.Tags = service.ParseTags(row.Title)
+		// row.Tags = service.ParseTags(row.Title)
 	}
 
 	service.AddTags(row.Tags)

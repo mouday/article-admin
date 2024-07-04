@@ -1,13 +1,13 @@
 package utils
 
 // https://github.com/go-ego/gse
-import "github.com/go-ego/gse"
+// import "github.com/go-ego/gse"
 
-var seg gse.Segmenter
+// var seg gse.Segmenter
 
-func init() {
-	seg.LoadDict()
-}
+// func init() {
+// 	seg.LoadDict()
+// }
 
 func Cut(word string) []string {
 
@@ -16,5 +16,6 @@ func Cut(word string) []string {
 	// `tag` 参数可以为空字符串，也可以指定词性。
 	// x.AddWordEx("比特币", 100000, "")
 
-	return seg.Cut(word, true)
+	// return seg.Cut(word, true)
+	return []string{}
 }
