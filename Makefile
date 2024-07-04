@@ -70,5 +70,5 @@ clean:
 
 .PHONY: dev
 dev:
-	# go run ./src/main.go
-	air
+	go run ./src/main.go
+	# air

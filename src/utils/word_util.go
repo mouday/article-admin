@@ -1,5 +1,6 @@
 package utils
 
+// https://github.com/go-ego/gse
 import "github.com/go-ego/gse"
 
 var seg gse.Segmenter
