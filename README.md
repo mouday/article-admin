@@ -1,12 +1,10 @@
 # Article Admin
 
-一个零依赖的基于Golang + React.js 的资产管理平台
+一个零依赖的基于Golang + React.js 的文章管理平台
 
 ## 项目截图
 
-![](https://cdn.jsdelivr.net/gh/mouday/img/2024/04/18/t3qfbrg.png)
-
-![](https://cdn.jsdelivr.net/gh/mouday/img/2024/04/18/sfofgut.png)
+![](https://mouday.github.io/img/2024/07/05/npcvfu2.png)
 
 ## 安装
 
@@ -35,7 +33,7 @@ article-admin.exe
 username: admin
 password: 8),fua+jMN
 ********************************************
-* Welcome Use Cron Admin  v1.0.0
+* Welcome Use Article Admin  v1.0.0
 * server run at:  http://127.0.0.1:8000
 * issue: https://github.com/mouday/article-admin
 ********************************************
