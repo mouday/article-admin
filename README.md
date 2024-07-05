@@ -2,6 +2,8 @@
 
 一个零依赖的基于Golang + React.js 的文章管理平台
 
+https://github.com/mouday/article-admin
+
 ## 项目截图
 
 ![](https://mouday.github.io/img/2024/07/05/npcvfu2.png)
