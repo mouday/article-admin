@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	"strings"
 
 	"github.com/mouday/article-admin/src/config"
@@ -24,7 +23,7 @@ func ParseTags(word string) []string {
 		}
 	}
 
-	fmt.Println(tags)
+	// fmt.Println(tags)
 
 	return tags
 }
