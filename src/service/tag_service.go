@@ -19,7 +19,7 @@ func ParseTags(word string) []string {
 	var tags []string
 
 	for _, row := range tagList {
-		if strings.Contains(word, row.Title) {
+		if strings.Contains(strings.ToLower(word), strings.ToLower(row.Title)) {
 			tags = append(tags, row.Title)
 		}
 	}
