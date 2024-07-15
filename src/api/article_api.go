@@ -1,8 +1,6 @@
 package api
 
 import (
-	"fmt"
-
 	"github.com/gin-gonic/gin"
 	"github.com/mouday/article-admin/src/config"
 	"github.com/mouday/article-admin/src/dto"
@@ -21,7 +19,7 @@ func AddArticle(ctx *gin.Context) {
 		row.Title = data.Title
 	}
 
-	fmt.Println(row.Tags)
+	// fmt.Println(row.Tags)
 
 	if len(row.Tags) == 0 {
 		row.Tags = service.ParseTags(row.Title)
