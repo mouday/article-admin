@@ -1,23 +1,30 @@
 package service
 
 import (
+	"fmt"
+	"strings"
+
 	"github.com/mouday/article-admin/src/config"
 	"github.com/mouday/article-admin/src/model"
-	"github.com/mouday/article-admin/src/utils"
 )
 
 func ParseTags(word string) []string {
 	db := config.GetDB()
-	words := utils.Cut(word)
+	// words := utils.Cut(word)
 
 	tagList := []model.TagModel{}
-	db.Model(&model.TagModel{}).Where("status = ?", true).Where("title in ? ", words).Find(&tagList)
+
+	db.Model(&model.TagModel{}).Where("status = ?", true).Find(&tagList)
 
 	var tags []string
 
 	for _, row := range tagList {
-		tags = append(tags, row.Title)
+		if strings.Contains(word, row.Title) {
+			tags = append(tags, row.Title)
+		}
 	}
+
+	fmt.Println(tags)
 
 	return tags
 }
